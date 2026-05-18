@@ -1,5 +1,13 @@
+import PasswordStrengthMeter from './components/PasswordStrengthMeter'
+
 function App() {
-  return <h1>Password Meter</h1>
+  return (
+    <div>
+      <h1>Password meter pro max :v </h1>
+
+      <PasswordStrengthMeter />
+    </div>
+  )
 }
 
 export default App

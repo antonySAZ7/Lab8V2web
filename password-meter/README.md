@@ -1,16 +1,157 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Antony David  Saz 24710
+web
 
-Currently, two official plugins are available:
+# Password Strength Meter
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Aplicacion desarrollada con React que evalua la fortaleza de una contrasenia utilizando test driven development
+---
 
-## React Compiler
+# Tecnologias utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Vitest
+- React Testing Library
+- Bun
+- ESLint
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Instalacion
+
+Instalar dependencias:
+
+```bash
+bun install
+```
+
+---
+
+# Ejecutar el proyecto
+
+Levantar el servidor de desarrollo:
+
+```bash
+bun run dev
+```
+
+Luego abrir en el navegador:
+
+```txt
+http://localhost:5173
+```
+
+---
+
+# Ejecutar tests
+
+Correr todos los tests:
+
+```bash
+bun test
+```
+
+---
+
+# Funcionalidades
+
+El proyecto evalua la fortaleza de una contrasenia siguiendo estas reglas puestas en la asignacion.
+
+
+---
+
+# Casos evaluados
+
+Los tests incluyen:
+
+- Renderizado del componente
+- Estado inicial
+- Contrasenias debiles
+- Contrasenias medias
+- Contrasenias fuertes
+- Contrasenias muy fuertes
+- Limpieza del input
+- Edge cases
+
+---
+
+# Estructura del proyecto
+
+```txt
+src/
+├── components/
+│   └── PasswordStrengthMeter.jsx
+│
+├── tests/
+│   ├── PasswordStrengthMeter.test.jsx
+│   └── passwordStrength.test.js
+│
+├── utils/
+│   └── passwordStrength.js
+│
+├── App.jsx
+├── main.jsx
+├── index.css
+└── setupTests.js
+```
+
+---
+
+# Arquitectura
+
+El proyecto separa:
+
+## Logica pura
+
+Archivo:
+
+```txt
+utils/passwordStrength.js
+```
+
+Contiene la logica de cálculo de fortaleza de contraseña.
+
+---
+
+## Componente React
+
+Archivo:
+
+```txt
+components/PasswordStrengthMeter.jsx
+```
+
+Se encarga de la interfaz de usuario y la interaccion
+
+---
+
+# Flujo TDD utilizado
+
+El proyecto fue desarrollado siguiendo el ciclo
+
+```txt
+RED → GREEN → REFACTOR
+```
+
+## RED
+Primero se escribieron tests que fallaban
+
+## GREEN
+Luego se implemento el mínimo código necesario para hacerlos pasar
+
+## REFACTOR
+Finalmente se reorganizo y limpio el código manteniendo los tests en verde
+
+---
+
+# Testing
+
+Se utilizo:
+
+- Vitest como test runner
+- React Testing Library para pruebas de componentes
+- userEvent para simular interaccion real del usuario
+- jsdom como entorno de testing
+
+---

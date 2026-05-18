@@ -1,3 +1,31 @@
-it('returns débil for short passwords', () => {
-    expect(calculatePasswordStrength('123')).toBe('débil')
-})
+export function calculatePasswordStrength(password) {
+
+    if (password.length === 0) {
+        return 'vacia'
+    }
+
+
+    if (password.length < 8) {
+        return 'debil'
+    }
+
+
+
+    const hasNumber = /\d/.test(password)
+
+
+    const hasSymbol = /[^a-zA-Z0-9]/.test(password)
+
+
+    if (hasNumber && hasSymbol) {
+        return 'muy fuerte'
+    }
+
+
+    if (hasNumber) {
+        return 'fuerte'
+    }
+
+
+    return 'media'
+}
